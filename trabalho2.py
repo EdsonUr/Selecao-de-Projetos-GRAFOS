@@ -82,7 +82,7 @@ else:
 
     for i in range(len(funcaoObjetivo)):
         color = 'green' if (i+1) in resposta else 'red'
-        net.add_node(i+1, label=f'P{i+1} ({funcaoObjetivo[i]})', color=color)
+        net.add_node(i+1, label=f'Projeto {i+1} ({funcaoObjetivo[i]})', color=color)
 
     for i in range(len(restricoes)):
         for j in range(len(restricoes[i])):
