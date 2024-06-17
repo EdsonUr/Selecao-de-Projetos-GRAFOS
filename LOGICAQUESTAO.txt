@@ -1,0 +1,39 @@
+Modelagem do Trabalho de Grafos:
+EX: 1:
+
+Max Z = 4x1 + 6x2 + 2x3 + 3x4 - 2x5 - 3x6 - 5x7 - 8x8
+
+sujeito a:
+Restrições dos projetos que dependem de outros:
+	   x1 - x5 <= 0
+	   x1 - x6 <= 0
+	   x2 - x3 <= 0
+	   x2 - x6 <= 0
+	   x3 - x7 <= 0
+	   x4 - x7 <= 0
+	   x4 - x8 <= 0
+	   x6 - x5 <= 0
+	   xi, onde i = 1, ..., 8 = {0,1}
+	   
+Como retirar essas informações da Matriz de Incidência? (ENTRADA):
+
+8				-> Indica a quantidade de vértices
+0 0 0 0 1 1 0 0		
+0 0 1 0 0 1 0 0
+0 0 0 0 0 0 1 0
+0 0 0 0 0 0 1 1		-> A linha da Matriz representa as nossas restrições: (****)
+0 0 0 0 0 0 0 0
+0 0 0 0 1 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0		
+4 6 2 3 -2 -3 -5 -8   -> Indica o valor de cada projeto, logo, representa nossa função objetivo.
+
+****: Onde tem 1 na linha representa que o projeto da linha tem dependência do projeto da coluna:
+Ex:
+Linha 1:
+0 0 0 0 1 1 0 0
+
+Restrições dessa linha:
+x1 - x5 <= 0
+x1 - x6 <= 0
+Pois o projeto da linha só pode ser escolhido(x = 1) se o projeto da coluna tiver sido escolhido (x = 1).
